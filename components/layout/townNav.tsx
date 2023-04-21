@@ -11,7 +11,7 @@ const sectionsByUser: Section[] = [
   { title: '방문예정스케줄보기', url: '/schedules'},
   { title: '찜콕♥', url: '/favorites'},
   { title: 'TALK', url: '/talk'},
-  { title: 'Q&A', url: '/qna'},
+  { title: '고객센터', url: '/qna'},
 ];
 const sectionsByCompany: Section[] = [
   { title: '우리가게 꾸미기', url: '/signin'},
@@ -30,7 +30,7 @@ export default function TownNav() {
 
 
   return (
-    <Toolbar component="nav" variant="dense" sx={{ justifyContent: "center"}}>
+    <Toolbar component="nav"  sx={{justifyContent: "center"}}>
       <Tabs value={value} onChange={tabChangeHandle} sx={{overflowX:"auto"}}
         variant="scrollable"  className="navTabs" scrollButtons  allowScrollButtonsMobile>
         {sectionsByUser.map((section)=>(

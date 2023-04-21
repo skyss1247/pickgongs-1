@@ -5,17 +5,46 @@ import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 import ko from "date-fns/locale/ko";
 import { StaticDateRangePicker } from "@mui/x-date-pickers-pro/StaticDateRangePicker";
 import { DateRange } from "@mui/x-date-pickers-pro/DateRangePicker";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect,createContext } from "react";
 import { format } from "date-fns";
 
+export type Book = {
+  productId?: string;
+  client?: string | null;
+  checkin?: Date | null;
+  checkout?: Date | null;
+  numberOfGuests?: number;
+  numberOfAdults?: number;
+  numberOfChildren?: number;
+  numberOfBabies?: number;
+  numberOfPets?: number;
+  fee?: number;
+  totalFee?: number;
+};
+
+export const BookContext = createContext<{
+  data: Book;
+  updateData: (frag: Book) => void;
+  isOpened: boolean;
+  openDialog: () => void;
+  closeDialog: () => void;
+  open: boolean;
+  openGuest: () => void;
+  closeGuest: () => void;
+} | null>(null);
+
+export type ReservedPeriod = [
+  { checkin: Date | string; checkout: Date | string }
+];
+
 function CalendarFragment({ reserved }: { reserved: ReservedPeriod }) {
-//   const ctx = useContext(BookContext);
+  const ctx = useContext(BookContext);
   
   // console.log(reserved);
-//   const value: DateRange<Date> = [
-//     ctx?.data.checkin ?? null,
-//     ctx?.data.checkout ?? null,
-//   ];
+  const value: DateRange<Date> = [
+    ctx?.data.checkin ?? null,
+    ctx?.data.checkout ?? null,
+  ];
 
   return (
     <Box>

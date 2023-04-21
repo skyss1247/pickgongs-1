@@ -31,7 +31,6 @@ export default function Header() {
       <Toolbar
         sx={{
           justifyContent: "space-between",
-          width:"90%",
           margin: "auto"
         }}
       >

@@ -9,13 +9,13 @@ type Props = { children: ReactNode };
 
 export default function DefaultLayout({ children }: Props) {
   return (
-    <Container disableGutters={true} maxWidth="lg">
+    <Container disableGutters={true}>
       <AppBar position="fixed" color="inherit" elevation={0} sx={{ mb: 3 }}>
         {/* <Header /> */}
         <NewHeader />
         <TownNav />
       </AppBar>
-      <Container maxWidth={"xl"} sx={{ py: 12,  }}>
+      <Container sx={{  pt:15, maxWidth:"1280px" }}>
         {children}
       </Container>
     </Container>

@@ -1,8 +1,11 @@
 import ContractorItem from "@/components/contractor/listItem";
 import SideBar from "@/components/picks/sideBar";
 import { Box, Button, Grid } from "@mui/material";
+import { useRouter } from 'next/router';
 const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 export default function SelectGongs() {
+    const router = useRouter();
+
     return(
     <Box sx={{
         position: "relative",
@@ -26,7 +29,7 @@ export default function SelectGongs() {
         </Box>
         <Box sx={{textAlign:"center"}}>
             <Button>이전</Button>
-            <Button>선택하기</Button>
+            <Button onClick={()=>router.push("/picks/1/selectDays")}>선택하기</Button>
         </Box>
     </Box>
     )

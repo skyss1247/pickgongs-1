@@ -14,14 +14,14 @@ const theme = createTheme({
   palette: {
     primary: {
       main:'#000',
-      light:'#F75CA9',
-      dark: '#CF3A3A',
+      light:'#008A60',
+      dark: '#008A60',
       contrastText: '#fff',
     },
     secondary: {
-      light: '#0AC458',
+      light: '#008A60',
       main: '#008A60',
-      dark: '#005C40',
+      dark: '#008A60',
       contrastText: '#000',
     } 
   },

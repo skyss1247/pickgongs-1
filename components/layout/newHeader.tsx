@@ -27,7 +27,7 @@ function NewHeader() {
 
   return (
     <AppBar position="static" color="inherit" elevation={0}>
-      <Container maxWidth="xl">
+      <Container >
         <Toolbar disableGutters sx={{ justifyContent: "space-between", }}>
           <Typography
             variant="h6"
@@ -94,24 +94,24 @@ function NewHeader() {
                 }}
               >
                   <MenuItem href="#" sx={{ my: 1, mx: 1.5, color:"black" }}>
-                    <NotificationsIcon />
+                    <img src='/icons/top/알림.png' />
                     <Typography>알림</Typography>  
                   </MenuItem>
                   <MenuItem onClick={()=>router.push("/account/signin")}
                     sx={{ my: 1, mx: 1.5, color:"black"}}>                    
-                    <LogoutIcon />
-                    <Typography>
+                    <img src='/icons/top/로그인.png' />
+                    <Typography >
                       로그인
                     </Typography>
                   </MenuItem>
                   <MenuItem href="#" sx={{ my: 1, mx: 1.5, color:"black" }}>
-                    <PersonIcon />
-                    <Typography>
-                      회원정보
+                    <img src='/icons/top/회원가입.png' />
+                    <Typography sx={{ml:1}}>
+                    회원가입
                     </Typography>
                   </MenuItem>
                   <MenuItem href="#" sx={{ my: 1, mx: 1.5, color:"black" }}>
-                    <Typography>
+                    <Typography >
                       앱다운로드
                     </Typography>
                   </MenuItem>
@@ -122,25 +122,24 @@ function NewHeader() {
                 href="#"
                 sx={{ my: 1, mx: 1.5, color:"black" }}
               >
-               <NotificationsIcon />
+               <img src='/icons/top/알림.png'  style={{marginRight:"0.5rem"}}/>
                 알림
               </Button>
               <Divider orientation="vertical" flexItem />
               <Button            
                 onClick={()=>router.push("/account/signin")}
-                sx={{ my: 1, mx: 1.5, color:"black" }}
+                sx={{ my: 1, mx: 2, color:"black" }}
               >
-                <LogoutIcon />
+                <img src='/icons/top/로그인.png'  style={{marginRight:"0.5rem"}}/>
                 로그인
               </Button>
               <Divider orientation="vertical"  flexItem/>
               <Button            
                 href="#"
-                sx={{ my: 1, mx: 1.5, color:"black" }}
-                
+                sx={{ my: 1, mx: 2, color:"black" }}
               >
-                <PersonIcon />
-                회원정보
+               <img src='/icons/top/회원가입.png'  style={{marginRight:"0.5rem"}} />
+                회원가입
               </Button>
               <Divider orientation="vertical" flexItem />
               <Button            
