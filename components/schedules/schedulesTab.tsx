@@ -62,7 +62,7 @@ export default function ScheduleTabInfo() {
         </Box>
         <TabPanel value={value} index={0}>
             <Box sx={{width:"90%", margin:"auto", flexDirection:"column"}}>
-                <Box sx={{display:"flex", minHeight:"400px", flexDirection:"row"}}>
+                <Box sx={{display:"flex", minHeight:"400px", flexDirection:"row", justifyContent:"space-between"}}>
                     <Box sx={{width:"300px"}}>
                         <Box sx={{display:"flex",width:"300px", height:"330px",overflowY:"scroll", flexDirection:"column",textAlign:"center", border:"1px solid black"}}>
                             <Typography variant="h6" sx={{mb:1, position:"sticky", top:0,pt:2, backgroundColor:"white"}}>시공분야를 선택하세요</Typography>
@@ -94,12 +94,12 @@ export default function ScheduleTabInfo() {
         </TabPanel>
         <TabPanel value={value} index={1}>
             <Box sx={{width:"90%", margin:"auto"}}>
-                <Box sx={{display:"flex", minHeight:"400px", flexDirection:"row"}}>
+                <Box sx={{display:"flex", minHeight:"400px", flexDirection:"row", justifyContent:"space-between"}}>
                     <Box sx={{width:"300px"}}>
                         <Box sx={{display:"flex",width:"300px", height:"330px",overflowY:"scroll", flexDirection:"column",textAlign:"center", border:"1px solid black"}}>
                             <Typography variant="h6" sx={{mb:1, position:"sticky", top:0,pt:2, backgroundColor:"white"}}>시공분야를 선택하세요</Typography>
                             {sliceCa2.map((one) => (
-                                <Typography variant="h6">{one.name}</Typography>
+                                <Typography variant="h6" key={one.name}>{one.name}</Typography>
                             ))}
                             <CautionDialog setOpen={setOpen} open={open} />
                         </Box>
