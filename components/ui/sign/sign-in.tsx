@@ -81,7 +81,7 @@ export default function SingInForm() {
       </DialogTitle>
       <Divider />
       <DialogContent>
-        <Typography variant="h6">여행마렵다에 오신 것을 환영합니다.</Typography>
+        <Typography variant="h6"></Typography>
         <Box>
           <TextField
             color="info"

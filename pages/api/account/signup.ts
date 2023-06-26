@@ -14,6 +14,7 @@ export default async function handler(
       .json({ result: false, message: "요청을 처리할 수 없습니다." });
   }
 
+  
   const data = req.body as AccountData;
   try {
     const emailRegex = /\S+@\S+\.\S+/;

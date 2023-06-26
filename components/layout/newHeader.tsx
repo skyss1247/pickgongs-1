@@ -94,8 +94,8 @@ function NewHeader() {
                 }}
               >
                   <MenuItem href="#" sx={{ my: 1, mx: 1.5, color:"black" }}>
-                    <img src='/icons/top/알림.png' />
-                    <Typography>알림</Typography>  
+                    <img src='/icons/top/알림.png'  />
+                    <Typography >알림</Typography>  
                   </MenuItem>
                   <MenuItem onClick={()=>router.push("/account/signin")}
                     sx={{ my: 1, mx: 1.5, color:"black"}}>                    
@@ -120,7 +120,7 @@ function NewHeader() {
             <Box sx={{ flexGrow: 0, display: { xs: "none", md: "flex" } }}>
               <Button            
                 href="#"
-                sx={{ my: 1, mx: 1.5, color:"black" }}
+                sx={{ my: 1, mx: 1.5, color:"black",fontSize:"15px" }}
               >
                <img src='/icons/top/알림.png'  style={{marginRight:"0.5rem"}}/>
                 알림

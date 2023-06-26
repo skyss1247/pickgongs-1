@@ -33,7 +33,7 @@ export default function SignUpContractor() {
   };
 
   return (
-      <Container component="main" maxWidth="sm">
+      <Container component="main" maxWidth="lg">
         <CssBaseline />
         <Box
           sx={{
@@ -43,15 +43,15 @@ export default function SignUpContractor() {
             alignItems: 'center',
           }}
         >
-          <Typography component="h1" variant="h5">
+          <Typography component="h1" sx={{fontSize:"2rem", fontWeight:"bold", mb:2}} >
             사업자 회원가입
           </Typography>
-          <Typography>개인사업장</Typography>          
+          <Typography variant="h5">개인사업장</Typography>          
           <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
             <Grid container spacing={2}>
               <Grid item xs={12}>
-                <Typography>사업장 검수과정입니다. 사업장 정면으로 정확하게 촬영하여 등록해주세요</Typography>
-                <Box sx={{display:"flex", justifyContent:"space-around"}}>
+                <Typography sx={{textAlign:"center"}}>사업장 검수과정입니다. 사업장 정면으로 정확하게 촬영하여 등록해주세요</Typography>
+                <Box sx={{display:"flex", justifyContent:"space-around",textAlign:"center"}}>
                   <Box>
                     <AddBoxOutlinedIcon sx={{fontSize:"6rem", cursor:"pointer"}} />
                     <Typography>사업장 사진추가</Typography>
@@ -64,11 +64,11 @@ export default function SignUpContractor() {
                 </Box>
               </Grid>
               <Grid item xs={12}>
-                <Box sx={{display:"flex", justifyContent:"space-between"}}>
-                  <Typography>사업자등록증</Typography>       
+                <Box sx={{display:"flex", justifyContent:"space-between", mb:1}}>
+                  <Typography sx={{fontSize:"1.5rem", fontWeight:"bold"}}>사업자등록증</Typography>       
                   <Box>
-                    <Button>중복확인</Button>          
-                    <Button>사진등록</Button>
+                    <Button sx={{backgroundColor:"#7D7D7D", color:"white", borderRadius:"1rem", ml:2}}>중복확인</Button>          
+                    <Button sx={{backgroundColor:"#02CE9D", color:"white", borderRadius:"1rem", ml:2}}>사진등록</Button>
                   </Box>
                 </Box>
                 <TextField
@@ -81,15 +81,23 @@ export default function SignUpContractor() {
                 />
               </Grid>
               <Grid item xs={12}>
-                <Box>
-                  <Typography>신분증 사진등록</Typography>                  
-                  <Button>
-                    사진등록
-                  </Button>                  
-                </Box>                
+                <Box sx={{display:"flex", justifyContent:"space-between", mb:1}}>
+                  <Typography sx={{fontSize:"1.5rem", fontWeight:"bold"}}>신분증 사진등록</Typography>   
+                  <Box>     
+                    <Button sx={{backgroundColor:"#02CE9D", color:"white", borderRadius:"1rem", ml:2}}>사진등록</Button>
+                  </Box>                                  
+                </Box>    
+                <TextField
+                    autoComplete="given-name"
+                    name="firstName"
+                    disabled                    
+                    fullWidth
+                    id="firstName"
+                    label="신분증 파일"                                    
+                  />               
               </Grid>
               <Grid item xs={12}>
-                <Typography>업체명</Typography>
+                <Typography sx={{fontSize:"1.5rem", fontWeight:"bold"}}>업체명</Typography>
                 <TextField
                   required
                   fullWidth
@@ -98,9 +106,9 @@ export default function SignUpContractor() {
                 />
               </Grid>
               <Grid item xs={12}>
-                <Box sx={{display:"flex", justifyContent:"space-between"}}>
-                  <Typography>사업장 주소</Typography>
-                  <Button>주소 검색</Button>
+                <Box sx={{display:"flex", justifyContent:"space-between", mb:1}}>
+                  <Typography sx={{fontSize:"1.5rem", fontWeight:"bold"}}>사업장 주소</Typography>
+                  <Button sx={{backgroundColor:"#02CE9D", color:"white", borderRadius:"1rem", ml:2}}>주소 검색</Button>
                 </Box>
                 <TextField
                   required
@@ -111,8 +119,10 @@ export default function SignUpContractor() {
                 />
               </Grid> 
               <Divider sx={{m:2, width:"100%"}} />
-              <Grid container spacing={0}>
-                <Typography>주 업종을 등록하세요(자격증이 없다면 없음으로 입력)</Typography>
+              <Grid container spacing={2} sx={{width:"80%", margin:"auto"}}>
+                <Grid item xs={12}>
+                  <Typography sx={{fontSize:"1rem", fontWeight:"bold",mb:1,textAlign:"center" }}>주 업종을 등록하세요(자격증이 없다면 없음으로 입력)</Typography>
+                </Grid>
                 <Grid item xs={12} sm={6}>
                   <TextField
                     required
@@ -132,16 +142,16 @@ export default function SignUpContractor() {
                   />                  
                 </Grid>
                 <Grid item xs={12} sm={6} sx={{pl:"4rem"}}>
+                  <Typography sx={{fontSize:"1rem", fontWeight:"bold",mb:1}}>자격증 사진추가</Typography>
                   <AddBoxOutlinedIcon sx={{fontSize:"6rem", cursor:"pointer"}} />
-                  <Typography>자격증 사진추가</Typography>
                 </Grid>
-                <Button>자격증 추가하기</Button>
+                <Button sx={{fontSize:"1rem", fontWeight:"bold",mb:1}}>자격증 추가하기</Button>
               </Grid>
               <Divider sx={{m:2, width:"100%"}} />
               <Grid item xs={12}>
-                <Typography>소비자 보호 및 업체보호를 위해 보증기관을 통하여 보증발급 유무 확인란입니다. </Typography>
+                <Typography sx={{fontSize:"1rem", fontWeight:"bold",mb:1}}>소비자 보호 및 업체보호를 위해 보증기관을 통하여 보증발급 유무 확인란입니다. </Typography>
                 <Box sx={{mt:2}}>
-                  <Typography>보증기관 발급 유/무</Typography>
+                  <Typography sx={{fontSize:"1.5rem", fontWeight:"bold"}}>보증기관 발급 유/무</Typography>
                   <Select
                     value={gurantee}
                     onChange={handleChange}
@@ -152,7 +162,7 @@ export default function SignUpContractor() {
                   </Select>
                 </Box>
                 <Box sx={{mt:2}}>
-                  <Typography>보증 가능 여부를 선택하세요</Typography>
+                  <Typography sx={{fontSize:"1.5rem", fontWeight:"bold"}}>보증 가능 여부를 선택하세요</Typography>
                   <Select
                     value={gurantee}
                     onChange={handleChange}
@@ -168,8 +178,35 @@ export default function SignUpContractor() {
                 </Box>
               </Grid>
               <Divider sx={{m:2, width:"100%"}} />
+              <Grid item xs={12}>
+                <Typography sx={{fontSize:"1.5rem", fontWeight:"bold"}}>포트폴리오(홈페이지,블로그,티스토리,유튜브,인스타그램 등등)</Typography>
+                <TextField
+                    required
+                    fullWidth
+                    name="location"
+                    label="대표님의 포트폴리오를 확인할 수 있는 URL을 입력하세요"
+                    id="location"
+                    sx={{mb:2}}
+                />
+                <TextField
+                    required
+                    fullWidth
+                    name="location"
+                    label="대표님의 포트폴리오를 확인할 수 있는 URL을 입력하세요"
+                    id="location"
+                    sx={{mb:2}}
+                />
+                <TextField
+                    required
+                    fullWidth
+                    name="location"
+                    label="대표님의 포트폴리오를 확인할 수 있는 URL을 입력하세요"
+                    id="location"
+                    sx={{mb:2}}
+                />
+              </Grid>
               <Grid item xs={12} sm={8}>
-                <Typography>사업자 이메일</Typography>
+                <Typography sx={{fontSize:"1.5rem", fontWeight:"bold"}}>사업자 이메일</Typography>
                 <TextField
                   required
                   fullWidth
@@ -179,7 +216,7 @@ export default function SignUpContractor() {
                 />  
               </Grid>
               <Grid item xs={12} sm={4}>
-              <Typography>A/S기간을 입력해주세요</Typography>
+              <Typography sx={{fontSize:"1.5rem", fontWeight:"bold"}}>A/S기간을 입력해주세요</Typography>
                 <TextField
                   required
                   fullWidth
@@ -189,16 +226,18 @@ export default function SignUpContractor() {
                 />  
               </Grid>
             </Grid>
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              sx={{ mt: 3, mb: 2 }}
-              onClick={()=>router.push("signupFeeC")}
-            >
-              다음 단계
-            </Button>
-            <Grid container justifyContent="flex-end">
+            <Grid item xs={12} sx={{textAlign:"right"}}>
+              <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                sx={{ mt: 3, mb: 2, width:"30%", fontSize:"2rem", color:"white", backgroundColor:"#004BA7"}}
+                onClick={()=>router.push("signupFeeC")}
+              >
+                다음 단계
+              </Button>
+            </Grid>
+            <Grid container justifyContent="flex-end" sx={{mb:2}}>
               <Grid item>
                 <Link href="#" variant="body2">
                   계정을 갖고 계시면 로그인 화면으로

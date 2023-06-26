@@ -6,12 +6,12 @@ import { useRouter } from "next/router";
 type Section = { title: string; url: string };
 
 const sectionsByUser: Section[] = [
-  { title: '시공업체 찾기', url: '/contractor'},
-  { title: '시공 PICK', url: '/picks'},
-  { title: '방문예정스케줄보기', url: '/schedules'},
+  { title: '업체찾기', url: '/contractor'},
+  { title: '시공PICK', url: '/picks'},
+  { title: '스케줄', url: '/schedules'},
   { title: '찜콕♥', url: '/favorites'},
   { title: 'TALK', url: '/talk'},
-  { title: '고객센터', url: '/qna'},
+  { title: '마이페이지', url: '/qna'},
 ];
 const sectionsByCompany: Section[] = [
   { title: '우리가게 꾸미기', url: '/signin'},
@@ -34,7 +34,7 @@ export default function TownNav() {
       <Tabs value={value} onChange={tabChangeHandle} sx={{overflowX:"auto"}}
         variant="scrollable"  className="navTabs" scrollButtons  allowScrollButtonsMobile>
         {sectionsByUser.map((section)=>(
-            <Tab key={section.title} label={section.title} onClick={()=>router.push(section.url)}/>
+            <Tab key={section.title} sx={{fontSize:"24px"}} label={section.title} onClick={()=>router.push(section.url)}/>
         ))}
       </Tabs>
     </Toolbar>

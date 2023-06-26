@@ -32,24 +32,27 @@ export default function SignUp() {
         <CssBaseline />
         <Box
           sx={{
-            marginTop: 8,
+            marginTop: 4,
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
+            width:"640px"
           }}
         >
-          <Typography component="h1" variant="h5">
+          <Typography component="h1" fontSize={"43px"} fontFamily={"NotoSansKR-Regular"} >
             회원가입
           </Typography>
           <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
-            <Grid container spacing={2}>
+            <Grid container spacing={4}>
               <Grid item xs={12}>
+                <Typography sx={{mb:1, fontSize:"21px", fontFamily:"NotoSansKR-Medium", fontWeight:"bolder"}}>아이디를 입력해주세요
+                <Button sx={{backgroundColor:"#FC8210", color:"white", borderRadius:"1rem", ml:2}}>중복확인</Button></Typography>
                 <TextField
                   name="userId"
                   required
                   fullWidth
                   id="userId"
-                  label="아이디를 입력해주세요"
+                  label="name"
                   autoFocus
                   InputProps={{
                     endAdornment: (
@@ -61,11 +64,12 @@ export default function SignUp() {
                 />
               </Grid>
               <Grid item xs={12}>
+                <Typography sx={{mb:1, fontSize:"21px", fontFamily:"NotoSansKR-Medium", fontWeight:"bolder" }}>비밀번호를 입력해주세요</Typography>
                 <TextField
                   required
                   fullWidth
                   name="password"
-                  label="비밀번호를 입력해주세요"
+                  label="비밀번호 8자리(숫자,글자,특수문자 포함)"
                   type="password"
                   id="password"
                   InputProps={{
@@ -78,11 +82,12 @@ export default function SignUp() {
                 />
               </Grid>
               <Grid item xs={12}>
+                <Typography sx={{mb:1, fontSize:"21px", fontFamily:"NotoSansKR-Medium", fontWeight:"bolder" }}>비밀번호를 다시한번 입력해주세요</Typography>
                 <TextField
                   required
                   fullWidth
                   name="passwordCheck"
-                  label="비밀번호 확인"
+                  label="비밀번호 8자리(숫자,글자,특수문자 포함)"
                   type="password"
                   id="passwordCheck"
                   InputProps={{
@@ -95,11 +100,12 @@ export default function SignUp() {
                 />
               </Grid>
               <Grid item xs={12}>
+                <Typography sx={{mb:1, fontSize:"21px", fontFamily:"NotoSansKR-Medium", fontWeight:"bolder" }}>이메일을 입력해주세요</Typography>
                 <TextField
                   required
                   fullWidth
                   id="email"
-                  label="이메일을 입력해주세요"
+                  label="name@email.com"
                   name="email"
                   InputProps={{
                     endAdornment: (
@@ -111,6 +117,8 @@ export default function SignUp() {
                 />
               </Grid>
               <Grid item xs={12}>
+                <Typography sx={{mb:1, fontSize:"21px", fontFamily:"NotoSansKR-Medium", fontWeight:"bolder" }}>닉네임을 입력해주세요
+                <Button sx={{backgroundColor:"#FC8210", color:"white", borderRadius:"1rem", ml:2}}>중복확인</Button></Typography>
                 <TextField
                   required
                   fullWidth
@@ -118,18 +126,20 @@ export default function SignUp() {
                   label="닉네임을 입력해주세요"
                   name="nickName"
                 />
-              </Grid>              
+              </Grid>     
+              <Grid item xs={12}>
+                <Typography sx={{mb:1, fontSize:"21px", fontFamily:"NotoSansKR-Medium", fontWeight:"bolder" }}>본인인증하기
+                  <Button sx={{backgroundColor:"#FC8210", color:"white", borderRadius:"1rem", ml:2}}>인증하기</Button></Typography>
+              </Grid>           
             </Grid>
-            <Button>
-              본인인증하기
-            </Button>
+               
             <Button
               type="submit"
               fullWidth
               variant="contained"
-              sx={{ mt: 3, mb: 2 }}
+              sx={{ mt: 3, mb: 2, color:"white", fontSize:"27px" }}
             >
-              회원가입 하기
+              회원가입완료
             </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>

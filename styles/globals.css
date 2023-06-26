@@ -1,21 +1,45 @@
 @font-face {
-  font-family: 'FlowerSalt';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-2@1.0/FlowerSalt.woff2') format('woff2');
-  font-weight: normal;
+  font-family: 'NanumSquareEB';
+  font-weight: 400;
   font-style: normal;
+  src: url('/fonts/NanumSquareEB.otf') format('otf');
 }
 @font-face {
-  font-family: 'GangwonEdu';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
-  font-weight: normal;
+  font-family: 'NotoSansKR-Black';
+  font-weight: 400;
   font-style: normal;
-  
+  src: url('/fonts/NotoSansKR-Black.otf') format('otf');
 }
+@font-face {
+  font-family: 'NotoSansKR-Bold';
+  font-weight: 400;
+  font-style: normal;
+  src: url('/fonts/NotoSansKR-Bold.otf') format('otf');
+}
+@font-face {
+  font-family: 'NotoSansKR-Medium';
+  font-weight: 400;
+  font-style: normal;
+  src: url('/fonts/NotoSansKR-Medium.otf') format('otf');
+}
+@font-face {
+  font-family: 'NotoSansKR-Regular';
+  font-weight: 400;
+  font-style: normal;
+  src: url('/fonts/NotoSansKR-Regular.otf') format('otf');
+}
+@font-face {
+  font-family: 'Pretendard-SemiBold';
+  font-weight: 400;
+  font-style: normal;
+  src: url('/fonts/Pretendard-SemiBold.otf') format('otf');
+}
+
 html,
 body {
   padding: 0;
   margin: 0;  
-  font-family:'GangwonEdu';
+  font-family:'NotoSansKR-Bold';
   font-size:large;
   overflow-y: scroll;
   -ms-overflow-style: none; /* IE and Edge */

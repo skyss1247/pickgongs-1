@@ -33,7 +33,7 @@ export default function SignUpHeavy() {
   };
 
   return (
-      <Container component="main" maxWidth="xs">
+      <Container component="main" maxWidth="lg">
         <CssBaseline />
         <Box
           sx={{
@@ -41,17 +41,18 @@ export default function SignUpHeavy() {
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
+            
           }}
         >
-          <Typography component="h1" variant="h5">
+          <Typography component="h1" sx={{fontSize:"2rem", fontWeight:"bold", mb:2}}>
             사업자 회원가입
           </Typography>
-          <Typography>중장비</Typography>          
+          <Typography variant="h5">중장비</Typography>          
           <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
             <Grid container spacing={2}>
               <Grid item xs={12}>
-                <Typography>중장비차량 검수과정입니다. 정확하게 촬영하여 등록해주세요</Typography>
-                <Box sx={{display:"flex", justifyContent:"space-around"}}>
+                <Typography sx={{textAlign:"center"}}>중장비차량 검수과정입니다. 정확하게 촬영하여 등록해주세요</Typography>
+                <Box sx={{display:"flex", justifyContent:"space-around", textAlign:"center"}}>
                   <Box>
                     <AddBoxOutlinedIcon sx={{fontSize:"6rem", cursor:"pointer"}} />
                     <Typography>전면</Typography>
@@ -77,12 +78,12 @@ export default function SignUpHeavy() {
                   </Box>
                 </Box>
               </Grid>
-              <Grid item xs={12}>
-              <Box sx={{display:"flex", justifyContent:"space-between"}}>
-                  <Typography>사업자등록증</Typography>       
+              <Grid item xs={12} >
+                <Box sx={{display:"flex", justifyContent:"space-between"}}>
+                <Typography sx={{fontSize:"1.5rem", fontWeight:"bold"}}>사업자등록증</Typography>       
                   <Box>
-                    <Button>중복확인</Button>          
-                    <Button>사진등록</Button>
+                    <Button sx={{backgroundColor:"#7D7D7D", color:"white", borderRadius:"1rem", ml:2}}>중복확인</Button>          
+                    <Button sx={{backgroundColor:"#02CE9D", color:"white", borderRadius:"1rem", ml:2}}>사진등록</Button>
                   </Box>
                 </Box>
                 <TextField
@@ -95,7 +96,7 @@ export default function SignUpHeavy() {
                 />
               </Grid>
               <Grid item xs={12}>
-                <Typography>업체명</Typography>
+              <Typography sx={{fontSize:"1.5rem", fontWeight:"bold"}}>업체명</Typography>
                 <TextField
                   required
                   fullWidth
@@ -104,9 +105,9 @@ export default function SignUpHeavy() {
                 />
               </Grid>
               <Grid item xs={12}>
-                <Box sx={{display:"flex", justifyContent:"space-between"}}>
-                  <Typography>사업장 주소</Typography>
-                  <Button>주소 검색</Button>
+                <Box sx={{display:"flex", justifyContent:"space-between", mb:1}}>
+                  <Typography sx={{fontSize:"1.5rem", fontWeight:"bold"}}>사업장 주소</Typography>
+                  <Button sx={{backgroundColor:"#02CE9D", color:"white", borderRadius:"1rem", ml:2}}>주소 검색</Button>
                 </Box>
                 <TextField
                   required
@@ -118,7 +119,7 @@ export default function SignUpHeavy() {
               </Grid>
               <Divider sx={{width:"100%", mt:2}} />
               <Grid item xs={12} sm={5}>
-              <Typography>크레인 종류</Typography> 
+              <Typography sx={{fontSize:"1.5rem", fontWeight:"bold"}}>크레인 종류</Typography> 
                 <Select
                   value={gurantee}
                   onChange={handleChange}
@@ -130,7 +131,7 @@ export default function SignUpHeavy() {
                   </Select>
               </Grid>
               <Grid item xs={12} sm={4}>
-              <Typography>차종 TON</Typography> 
+              <Typography sx={{fontSize:"1.5rem", fontWeight:"bold"}}>차종 TON</Typography> 
                   <TextField
                     required
                     fullWidth
@@ -140,7 +141,7 @@ export default function SignUpHeavy() {
                   />
               </Grid>
               <Grid item xs={12} sm={3}>
-              <Typography>경력</Typography> 
+              <Typography sx={{fontSize:"1.5rem", fontWeight:"bold"}}>경력</Typography> 
                   <TextField
                     required
                     fullWidth
@@ -151,38 +152,51 @@ export default function SignUpHeavy() {
               </Grid>
               <Divider sx={{width:"100%", mt:2}} />
               <Grid item xs={12}>
-                <Typography>해당자격증 사진촬영하여 업로드 하시길바랍니다</Typography>
-                <Box sx={{display:"flex", justifyContent:"space-around"}}>
+                <Typography sx={{textAlign:"center", fontWeight:"bold"}}>해당자격증 사진촬영하여 업로드 하시길바랍니다</Typography>
+                <Box sx={{display:"flex",mt:4, justifyContent:"space-around"}}>
                   <Box>
-                    <Typography>화물운송 자격증번호</Typography>
-                    <TextField
-                      required
-                      fullWidth
-                      name="freightNum"
-                      id="freightNum"
-                      sx={{mb:1}}
-                    />
-                    <Typography>자격증 사진</Typography>
+                    <Typography sx={{fontSize:"1.5rem", fontWeight:"bold"}}>자격증 사진</Typography>
                     <AddBoxOutlinedIcon sx={{fontSize:"6rem", cursor:"pointer"}} />
                   </Box>
                   <Box>
-                  <Typography sx={{mb:8}}>조종교육 이수증</Typography>
-                    <Typography>이수증 사진</Typography>
+                    <Typography sx={{fontSize:"1.5rem", fontWeight:"bold"}}>이수증 사진</Typography>
                     <AddBoxOutlinedIcon sx={{fontSize:"6rem", cursor:"pointer"}} />
                   </Box>
                 </Box>
-              </Grid>              
+              </Grid> 
+              <Grid item xs={12}>
+              <Typography sx={{fontSize:"1.5rem", fontWeight:"bold", mb:2}}>사업자 이메일</Typography>
+                <TextField
+                  required
+                  fullWidth
+                  id="companyName"
+                  name="companyName"
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <Typography sx={{fontSize:"1.5rem", fontWeight:"bold"}}>포트폴리오(홈페이지,블로그,티스토리,유튜브,인스타그램 등등)</Typography>
+                <TextField
+                    required
+                    fullWidth
+                    name="location"
+                    label="대표님의 포트폴리오를 확인할 수 있는 URL을 입력하세요"
+                    id="location"
+                    sx={{mb:2}}
+                />
+              </Grid>             
             </Grid>
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              sx={{ mt: 3, mb: 2 }}
-              onClick={()=>router.push("signupFeeH")}
-            >
-              다음 단계
-            </Button>
-            <Grid container justifyContent="flex-end">
+            <Grid item xs={12} sx={{textAlign:"right"}}>
+              <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                sx={{ mt: 3, mb: 2, width:"30%", fontSize:"2rem", color:"white", backgroundColor:"#004BA7"}}
+                onClick={()=>router.push("signupFeeH")}
+              >
+                다음 단계
+              </Button>
+            </Grid>
+            <Grid container justifyContent="flex-end" sx={{mb:2}}>
               <Grid item>
                 <Link href="#" variant="body2">
                   계정을 갖고 계시면 로그인 화면으로

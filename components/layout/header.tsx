@@ -46,8 +46,8 @@ export default function Header() {
             href="#"
             sx={{ my: 1, mx: 1.5, color:"black" }}
           >
-            <NotificationsIcon />
-            알림
+            <NotificationsIcon sx={{width:"18px", height:"16px"}}/>
+            <Typography sx={{fontSize:"15px"}}>알림</Typography>
           </Button>
           <Divider orientation="vertical" flexItem />
           <Button            

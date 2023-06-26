@@ -36,21 +36,21 @@ export default function SignIn() {
   };
 
   return (
-      <Container component="main" maxWidth="xs">
+      <Container component="main" >
         <CssBaseline />
         <Box
           sx={{
-            marginTop: 8,
+            marginTop: 12,
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
           }}
         >
-          <Avatar sx={{ m: 1 }}>
-            <LockOutlinedIcon />
-          </Avatar>
-          <Typography component="h1" variant="h5">
-            시작하기 전에 로그인이 필요합니다.
+          <Typography component="h1" sx={{fontSize:"38px"}}>
+            시작하기 전에 로그인이 필요해요
+          </Typography>
+          <Typography component="h1" sx={{fontSize:"28px", mb:2, fontWeight:"bolder", color:"#615959"}}>
+            회원전용 로그인 전환
           </Typography>
           <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
             <TextField
@@ -58,7 +58,7 @@ export default function SignIn() {
               required
               fullWidth
               id="email"
-              label="이메일을 입력해주세요"
+              label="아이디를 입력해주세요"
               name="email"
               autoComplete="email"
               autoFocus
@@ -113,19 +113,19 @@ export default function SignIn() {
                 <Button fullWidth
                     variant="contained"
                     color='secondary'
-                    sx={{ml:"1rem", backgroundColor:"white", border:"1px solid #ccc"}}
+                    sx={{ml:"1rem",p:"1rem", backgroundColor:"white", border:"1px solid #ccc"}}
                     onClick={()=>router.push("/account/signup")}
                 >
-                    일반 회원가입
+                  회원가입 하러가기
                 </Button>
               </Grid>
               <Grid item>
                 <Button fullWidth
                     variant="contained"
-                    sx={{right:"1rem", backgroundColor:"white", border:"1px solid #ccc", color:"black"}}
+                    sx={{right:"1rem",p:"1rem", backgroundColor:"white", border:"1px solid #ccc", color:"black"}}
                     onClick={()=>router.push("/account/signupC")}
                 >
-                    사업자 회원가입
+                  업체가입 하러가기
                 </Button>
               </Grid>
             </Grid>

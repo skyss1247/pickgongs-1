@@ -26,7 +26,7 @@ const theme = createTheme({
     } 
   },
   typography: {
-    fontFamily: 'GangwonEdu'
+    fontFamily: 'NotoSansKR-Bold'
   }
 });
 
