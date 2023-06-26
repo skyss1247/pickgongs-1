@@ -11,7 +11,7 @@ const sectionsByUser: Section[] = [
   { title: '스케줄', url: '/schedules'},
   { title: '찜콕♥', url: '/favorites'},
   { title: 'TALK', url: '/talk'},
-  { title: '마이페이지', url: '/qna'},
+  { title: '마이페이지', url: '/myPage'},
 ];
 const sectionsByCompany: Section[] = [
   { title: '우리가게 꾸미기', url: '/signin'},

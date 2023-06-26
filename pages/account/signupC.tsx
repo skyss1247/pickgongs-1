@@ -18,7 +18,7 @@ import { useRouter } from 'next/router';
 
 export default function SignUpC() {
     const router = useRouter();
-    const [type, setType] = React.useState<string>("");
+    const [type, setType] = React.useState<string>("contractor");
     const [check, setCheck] = React.useState<boolean>(true);
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();

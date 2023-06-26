@@ -10,16 +10,37 @@ import MenuItem from '@mui/material/MenuItem';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-import {Divider} from '@mui/material';
+import {Divider, FormLabel} from '@mui/material';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { useRouter } from 'next/router';
 import AddBoxOutlinedIcon from '@mui/icons-material/AddBoxOutlined';
+import AddIcon from '@mui/icons-material/Add';
+import { MuiFileInput } from 'mui-file-input';
+import MapModal from '@/components/modals/mapModal';
+import RemoveIcon from '@mui/icons-material/Remove';
+
 
 
 export default function SignUpContractor() {
   const router = useRouter();
   const [gurantee, setGurantee] = React.useState('');
+
+  const [serviceList, setServiceList] = React.useState([{ service: "" }]);
+  const handleServiceRemove = (index:any) => {
+    const list = [...serviceList];
+    list.splice(index, 1);
+    setServiceList(list);
+  };
+
+  const handleServiceAdd = () => {
+    setServiceList([...serviceList, { service: "" }]);
+  };
+
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   const handleChange = (event: SelectChangeEvent) => {
     setGurantee(event.target.value as string);
   };
@@ -32,6 +53,12 @@ export default function SignUpContractor() {
     });
   };
 
+  const [value, setValue] = React.useState(null)
+
+  const handleFile = (newValue:any) => {
+    setValue(newValue)
+  }
+
   return (
       <Container component="main" maxWidth="lg">
         <CssBaseline />
@@ -43,29 +70,43 @@ export default function SignUpContractor() {
             alignItems: 'center',
           }}
         >
-          <Typography component="h1" sx={{fontSize:"2rem", fontWeight:"bold", mb:2}} >
+          <Typography component="h1" sx={{fontSize:"1.8rem", fontWeight:"bold", mb:2}} >
             사업자 회원가입
           </Typography>
           <Typography variant="h5">개인사업장</Typography>          
           <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
-            <Grid container spacing={2}>
+            <Grid container spacing={6}>
               <Grid item xs={12}>
-                <Typography sx={{textAlign:"center"}}>사업장 검수과정입니다. 사업장 정면으로 정확하게 촬영하여 등록해주세요</Typography>
+                <Typography sx={{textAlign:"center", mb:4}}>사업장 검수과정입니다. 사업장 정면으로 정확하게 촬영하여 등록해주세요</Typography>
                 <Box sx={{display:"flex", justifyContent:"space-around",textAlign:"center"}}>
                   <Box>
-                    <AddBoxOutlinedIcon sx={{fontSize:"6rem", cursor:"pointer"}} />
-                    <Typography>사업장 사진추가</Typography>
+                    <input accept="image/*"
+                      style={{ display: 'none' }}
+                      id="raised-button-file"
+                      multiple
+                      type="file" />
+                    <label htmlFor="raised-button-file">               
+                      <Box onClick={handleFile} sx={{width:"250px", height:"250px", border:"1px solid black", pt:12}}><AddIcon fontSize='large' /></Box>
+                    </label>     
+                    <Typography sx={{fontSize:"1.2rem", fontWeight:"bold"}}>사업장 사진추가</Typography>
                     <Typography variant='subtitle2'>(간판이 포함된 전면사진)</Typography>
                   </Box>
                   <Box>
-                    <AddBoxOutlinedIcon sx={{fontSize:"6rem"}} />
-                    <Typography>임대차계약서</Typography>
+                    <input accept="image/*"
+                      style={{ display: 'none' }}
+                      id="raised-button-file"
+                      multiple
+                      type="file" />
+                    <label htmlFor="raised-button-file">               
+                      <Box onClick={handleFile} sx={{width:"250px", height:"250px", border:"1px solid black", pt:12}}><AddIcon fontSize='large' /></Box>
+                    </label>
+                    <Typography sx={{fontSize:"1.2rem", fontWeight:"bold"}}>임대차계약서</Typography>
                   </Box>
                 </Box>
               </Grid>
               <Grid item xs={12}>
                 <Box sx={{display:"flex", justifyContent:"space-between", mb:1}}>
-                  <Typography sx={{fontSize:"1.5rem", fontWeight:"bold"}}>사업자등록증</Typography>       
+                  <Typography sx={{fontSize:"1.3rem", fontWeight:"bold"}}>사업자등록증</Typography>       
                   <Box>
                     <Button sx={{backgroundColor:"#7D7D7D", color:"white", borderRadius:"1rem", ml:2}}>중복확인</Button>          
                     <Button sx={{backgroundColor:"#02CE9D", color:"white", borderRadius:"1rem", ml:2}}>사진등록</Button>
@@ -108,8 +149,9 @@ export default function SignUpContractor() {
               <Grid item xs={12}>
                 <Box sx={{display:"flex", justifyContent:"space-between", mb:1}}>
                   <Typography sx={{fontSize:"1.5rem", fontWeight:"bold"}}>사업장 주소</Typography>
-                  <Button sx={{backgroundColor:"#02CE9D", color:"white", borderRadius:"1rem", ml:2}}>주소 검색</Button>
+                  <Button  onClick={handleOpen} sx={{backgroundColor:"#02CE9D", color:"white", borderRadius:"1rem", ml:2}}>주소 검색</Button>
                 </Box>
+                <MapModal open={open} handleClose={handleClose} />
                 <TextField
                   required
                   fullWidth
@@ -180,30 +222,38 @@ export default function SignUpContractor() {
               <Divider sx={{m:2, width:"100%"}} />
               <Grid item xs={12}>
                 <Typography sx={{fontSize:"1.5rem", fontWeight:"bold"}}>포트폴리오(홈페이지,블로그,티스토리,유튜브,인스타그램 등등)</Typography>
-                <TextField
-                    required
-                    fullWidth
-                    name="location"
-                    label="대표님의 포트폴리오를 확인할 수 있는 URL을 입력하세요"
-                    id="location"
-                    sx={{mb:2}}
-                />
-                <TextField
-                    required
-                    fullWidth
-                    name="location"
-                    label="대표님의 포트폴리오를 확인할 수 있는 URL을 입력하세요"
-                    id="location"
-                    sx={{mb:2}}
-                />
-                <TextField
-                    required
-                    fullWidth
-                    name="location"
-                    label="대표님의 포트폴리오를 확인할 수 있는 URL을 입력하세요"
-                    id="location"
-                    sx={{mb:2}}
-                />
+                {serviceList.map((singleService, index)=>(
+                  <Box key={index} sx={{width:"100%"}}>
+                    <TextField
+                      required
+                      fullWidth
+                      name="location"
+                      label="대표님의 포트폴리오를 확인할 수 있는 URL을 입력하세요"
+                      id="location"
+                      value={singleService.service}
+                      sx={{mb:2, width:"80%"}}
+                    />
+                    {serviceList.length - 1 === index && serviceList.length < 3 && (
+                      <Button
+                        type="button"
+                        onClick={handleServiceAdd}
+                        className="add-btn"
+                      >
+                        <AddIcon />
+                      </Button>
+                    )}
+                    {serviceList.length !== 1 && (
+                      <Button
+                        type="button"
+                        onClick={() => handleServiceRemove(index)}
+                        className="remove-btn"
+                      >
+                        <RemoveIcon />
+                      </Button>
+                    )}
+                  </Box>
+                ))}
+                
               </Grid>
               <Grid item xs={12} sm={8}>
                 <Typography sx={{fontSize:"1.5rem", fontWeight:"bold"}}>사업자 이메일</Typography>
@@ -231,7 +281,7 @@ export default function SignUpContractor() {
                 type="submit"
                 fullWidth
                 variant="contained"
-                sx={{ mt: 3, mb: 2, width:"30%", fontSize:"2rem", color:"white", backgroundColor:"#004BA7"}}
+                sx={{ mt: 3, mb: 2, width:"30%", fontSize:"2rem", color:"white", backgroundColor:"#004BA7", borderRadius:"2rem"}}
                 onClick={()=>router.push("signupFeeC")}
               >
                 다음 단계

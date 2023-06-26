@@ -5,7 +5,7 @@ export default function StatusBar() {
 
     return(
         <Box sx={{display:"flex", border:"1px solid #ccc", borderRadius:"0.2rem", p:2, width:"100%", margin:"auto"}}>
-          <Button sx={{backgroundColor:"#7FE668"}}>우리집</Button>
+          <Button sx={{backgroundColor:"#15BF81"}}>우리집</Button>
           <Divider orientation="vertical" flexItem sx={{mr:1,ml:1}} />
           <Button sx={{backgroundColor:"white"}}>상가, 건물</Button>                   
           <Divider orientation="vertical" flexItem sx={{mr:1,ml:1}} />
