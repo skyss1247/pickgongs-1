@@ -182,7 +182,7 @@ export default function SignUp() {
             </Typography>
             <Typography sx={{mb:4}}>본인인증을 위한 확인이 필요합니다</Typography>
             <Grid container spacing={4} >
-                <Grid item xs={6} sx={{textAlign:"left"}}>
+                <Grid item xs={6} >
                   이름
                   <TextField
                     required
